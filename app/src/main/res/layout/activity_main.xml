@@ -33,7 +33,7 @@
             android:layout_marginTop="16dp"
             android:background="@drawable/menu01"
             android:elevation="0dp"
-            android:onClick="onClickMenu"
+            android:onClick="onClickLogin"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -78,7 +78,7 @@
             android:id="@+id/imvCookie"
             android:layout_width="wrap_content"
             android:layout_height="155dp"
-            android:onClick="onClickCookie"
+            android:onClick="onClickBread"
             app:layout_constraintBottom_toTopOf="@+id/imvDrinks"
             app:layout_constraintTop_toBottomOf="@+id/imvCake"
             app:srcCompat="@drawable/cookie"

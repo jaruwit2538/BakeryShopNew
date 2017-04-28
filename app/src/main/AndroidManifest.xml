@@ -20,7 +20,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login"></activity>
+        <activity android:name=".Login" />
+        <activity android:name=".CakeMenu" />
+        <activity android:name=".BreadMenu" />
+        <activity android:name=".DrinkMenu"></activity>
     </application>
 
 </manifest>
