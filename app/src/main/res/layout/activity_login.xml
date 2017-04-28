@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg3"
+    tools:context="com.example.khowoatt.bakeryshop.Login">
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="25dp">
+
+
+    <Button
+        android:id="@+id/btnLinkCreate"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="336dp"
+        android:layout_weight="1"
+        android:background="@drawable/login1"
+        android:onClick="onClickMenu"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnLinkLogin"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/login2"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnLinkCreate" />
+
+    <TextView
+        android:id="@+id/tilLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="45dp"
+        android:layout_marginTop="21dp"
+        android:text="@string/seemenu"
+        android:textColor="#ffffff"
+        android:typeface="monospace"
+        app:layout_constraintLeft_toLeftOf="@+id/btnLinkLogin"
+        app:layout_constraintTop_toBottomOf="@+id/btnLinkLogin" />
+
+
+</android.support.constraint.ConstraintLayout>
