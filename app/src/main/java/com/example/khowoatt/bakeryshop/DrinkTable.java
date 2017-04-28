@@ -29,6 +29,6 @@ public class DrinkTable {
         objContentValues.put(COLUMN_DRINK,strName_drink);
         objContentValues.put(COLUMN_SOURCE,strDetail_drink);
         objContentValues.put(COLUMN_PRICE,strPicture_drink);
-        return readSqLiteDatabase.insert(DRINK_TABLE,null, objContentValues);
+        return writeSqLiteDatabase.insert(DRINK_TABLE,null, objContentValues);
     }
 }

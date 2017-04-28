@@ -28,6 +28,6 @@ public class CakeTable { private MySQLite objMySQLiteOpenHelper;
         objContentValues.put(COLUMN_CAKE,strName_cake);
         objContentValues.put(COLUMN_SOURCE,strDetail_cake);
         objContentValues.put(COLUMN_PRICE,strPicture_cake);
-        return readSqLiteDatabase.insert(CAKE_TABLE,null, objContentValues);
+        return writeSqLiteDatabase.insert(CAKE_TABLE,null, objContentValues);
     }
 }

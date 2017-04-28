@@ -31,6 +31,6 @@ public class OrderTable {
         objContentValues.put(COLUMN_DATE,strDate);
         objContentValues.put(COLUMN_TOTALPRICE,strTotalPrice);
         objContentValues.put(COLUMN_PRICE,strprice);
-        return readSqLiteDatabase.insert(ORDER_TABLE,null, objContentValues);
+        return writeSqLiteDatabase.insert(ORDER_TABLE,null, objContentValues);
     }
 }

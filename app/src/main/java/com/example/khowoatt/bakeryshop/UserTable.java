@@ -35,7 +35,7 @@ public class UserTable {
         objContentValues.put(COLUMN_PHONE,strPhone);
         objContentValues.put(COLUMN_ADDRESS,strAddress);
         objContentValues.put(COLUMN_EMAIL,strEmail);
-        return readSqLiteDatabase.insert(USER_TABLE,null, objContentValues);
+        return writeSqLiteDatabase.insert(USER_TABLE,null, objContentValues);
     }
 
 

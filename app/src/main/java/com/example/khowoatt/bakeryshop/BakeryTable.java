@@ -29,7 +29,7 @@ public class BakeryTable {private MySQLite objMySQLiteOpenHelper;
         objContentValues.put(COLUMN_SOURCE,strDetail_bakery);
         objContentValues.put(COLUMN_PRICE,strPicture_bakery);
 
-        return readSqLiteDatabase.insert(BAKERY_TABLE,null, objContentValues);
+        return writeSqLiteDatabase.insert(BAKERY_TABLE,null, objContentValues);
     }
 
 }
