@@ -9,10 +9,9 @@ import android.database.sqlite.SQLiteDatabase;
  */
 
 public class BakeryTable {private MySQLite objMySQLiteOpenHelper;
-    private SQLiteDatabase writeSqLiteDatabase;
-    private SQLiteDatabase readSqLiteDatabase;
+    private SQLiteDatabase writeSqLiteDatabase,readSqLiteDatabase;
 
-    public static final String BAKERY_TABLE = "bakeryTable";
+    public static final String BAKERY_TABLE = "bakeryTABLE";
     public static final String COLUMN_ID_BAKERY = "ID_bakery";
     public static final String COLUMN_BAKERY = "Name_bakery";
     public static final String COLUMN_SOURCE = "Detail_bakery";
@@ -29,7 +28,7 @@ public class BakeryTable {private MySQLite objMySQLiteOpenHelper;
         objContentValues.put(COLUMN_SOURCE,strDetail_bakery);
         objContentValues.put(COLUMN_PRICE,strPicture_bakery);
 
-        return writeSqLiteDatabase.insert(BAKERY_TABLE,null, objContentValues);
+        return readSqLiteDatabase.insert(BAKERY_TABLE,null, objContentValues);
     }
 
 }

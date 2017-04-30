@@ -13,14 +13,14 @@ public class UserTable {
     private SQLiteDatabase writeSqLiteDatabase;
     private SQLiteDatabase readSqLiteDatabase;
 
-    public static final String USER_TABLE = "userTable";
+    public static final String USER_TABLE = "userTABLE1";
     public static final String COLUMN_ID_USER = "ID_num";
     public static final String COLUMN_USER = "Username";
     public static final String COLUMN_PASSWORD = "Password";
-    public static final String COLUMN_FACEBOOK = "Facebook";
     public static final String COLUMN_PHONE = "Phone";
     public static final String COLUMN_ADDRESS = "Address";
     public static final String COLUMN_EMAIL = "Email";
+    public static final String COLUMN_FACEBOOK = "Facebook";
 
     public UserTable(Context context){
         objMySQLiteOpenHelper = new MySQLite(context);
@@ -35,7 +35,7 @@ public class UserTable {
         objContentValues.put(COLUMN_PHONE,strPhone);
         objContentValues.put(COLUMN_ADDRESS,strAddress);
         objContentValues.put(COLUMN_EMAIL,strEmail);
-        return writeSqLiteDatabase.insert(USER_TABLE,null, objContentValues);
+        return readSqLiteDatabase.insert(USER_TABLE,null, objContentValues);
     }
 
 

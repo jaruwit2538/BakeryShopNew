@@ -12,7 +12,7 @@ public class CakeTable { private MySQLite objMySQLiteOpenHelper;
     private SQLiteDatabase writeSqLiteDatabase;
     private SQLiteDatabase readSqLiteDatabase;
 
-    public static final String CAKE_TABLE = "cakeTable";
+    public static final String CAKE_TABLE = "cakeTABLE";
     public static final String COLUMN_ID_CAKE = "ID_cake";
     public static final String COLUMN_CAKE = "Name_cake";
     public static final String COLUMN_SOURCE = "Detail_cake";
@@ -28,6 +28,6 @@ public class CakeTable { private MySQLite objMySQLiteOpenHelper;
         objContentValues.put(COLUMN_CAKE,strName_cake);
         objContentValues.put(COLUMN_SOURCE,strDetail_cake);
         objContentValues.put(COLUMN_PRICE,strPicture_cake);
-        return writeSqLiteDatabase.insert(CAKE_TABLE,null, objContentValues);
+        return readSqLiteDatabase.insert(CAKE_TABLE,null, objContentValues);
     }
 }

@@ -12,7 +12,7 @@ public class OrderTable {
     private SQLiteDatabase writeSqLiteDatabase;
     private SQLiteDatabase readSqLiteDatabase;
 
-    public static final String ORDER_TABLE = "orderTable";
+    public static final String ORDER_TABLE = "orderTABLE";
     public static final String COLUMN_ID_ORDER = "ID_order";
     public static final String COLUMN_NUNBER = "Number";
     public static final String COLUMN_DATE = "Date";
@@ -31,6 +31,6 @@ public class OrderTable {
         objContentValues.put(COLUMN_DATE,strDate);
         objContentValues.put(COLUMN_TOTALPRICE,strTotalPrice);
         objContentValues.put(COLUMN_PRICE,strprice);
-        return writeSqLiteDatabase.insert(ORDER_TABLE,null, objContentValues);
+        return readSqLiteDatabase.insert(ORDER_TABLE,null, objContentValues);
     }
 }

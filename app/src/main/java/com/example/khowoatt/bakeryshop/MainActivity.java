@@ -35,8 +35,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         connectedSQLite();
-        testAddValue();
+
+        //testAddValue();
+
         synJSONtoSQLite();
 
     }
@@ -46,16 +49,16 @@ public class MainActivity extends AppCompatActivity {
         StrictMode.setThreadPolicy(myPolicy);
 
         int intTimes = 0;
-        while (intTimes <= 1)
+        while (intTimes <= 4)
         {
             InputStream objInputStream = null;
             String strJSON = null;
-            String strUserURL = "http://5711020660011.sci.dusit.ac.th/user.php";
-            String strBakeryURL = "http://5711020660011.sci.dusit.ac.th/bakery.php";
-            String strCakeURL = "http://5711020660011.sci.dusit.ac.th/cake.php";
-            String strDrinkURL = "http://5711020660011.sci.dusit.ac.th/drink.php";
-            String strOrderURL = "http://5711020660011.sci.dusit.ac.th/order.php";
-            HttpPost objHttpPost;
+            String strUserURL = "http://bitmouse.96.lt/K/user.php";
+            String strBakeryURL = "http://bitmouse.96.lt/K/bakery.php";
+            String strCakeURL = "http://bitmouse.96.lt/K/cake.php";
+            String strDrinkURL = "http://bitmouse.96.lt/K/drink.php";
+            String strOrderURL = "http://bitmouse.96.lt/K/order.php";
+            HttpPost objHttpPost = null;
 
             try {
                 HttpClient objHttpClient = new DefaultHttpClient();
@@ -81,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                 HttpEntity objHttpEntity = objHttpResponse.getEntity();
                 objInputStream = objHttpEntity.getContent();
             }catch (Exception e){
-                Log.d("Eror","InputStream ==>"+ e.toString());
+                Log.d("Error","InputStream ==>"+ e.toString());
             }
             try{
                 BufferedReader objBufferedReader = new BufferedReader
@@ -95,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
                 objInputStream.close();
                 strJSON = objStringBuilder.toString();
             } catch (Exception e){
-                Log.d("Eror","strJSON ==>"+e.toString());
+                Log.d("Error","strJSON ==>"+e.toString());
             }
             try {
                 JSONArray objJsonArray = new JSONArray(strJSON);
@@ -109,34 +112,34 @@ public class MainActivity extends AppCompatActivity {
                             String strPhone = jsonObject.getString("Phone");
                             String strAddress = jsonObject.getString("Address");
                             String strEmail = jsonObject.getString("Email");
-                            long addvalue = objUserTABLE.addNewUser(strUsername,strPassword,strFacebook,strPhone,strAddress,strEmail);
+                            objUserTABLE.addNewUser(strUsername,strPassword,strFacebook,strPhone,strAddress,strEmail);
 
                             break;
                         case 1:
-                            String strName_bakery = jsonObject.getString("NameBakery");
-                            String strDetail_bakery = jsonObject.getString("DetailBakery");
-                            String strPicture_bakery = jsonObject.getString("PictureBakery");
-                            addvalue = objBakeryTABLE.addNewBakery(strName_bakery,strDetail_bakery,strPicture_bakery);
+                            String strName_bakery = jsonObject.getString("Name_bakery");
+                            String strDetail_bakery = jsonObject.getString("Detail_bakery");
+                            String strPicture_bakery = jsonObject.getString("Picture_bakery");
+                            objBakeryTABLE.addNewBakery(strName_bakery,strDetail_bakery,strPicture_bakery);
 
                             break;
                         case 2:
-                            String strName_cake = jsonObject.getString("NameCake");
-                            String strDetail_cake = jsonObject.getString("DetailCake");
-                            String strPicture_cake = jsonObject.getString("PictureCake");
-                            addvalue = objCakeTABLE.addNewCake(strName_cake,strDetail_cake,strPicture_cake);
+                            String strName_cake = jsonObject.getString("Name_cake");
+                            String strDetail_cake = jsonObject.getString("Detail_cake");
+                            String strPicture_cake = jsonObject.getString("Picture_cake");
+                            objCakeTABLE.addNewCake(strName_cake,strDetail_cake,strPicture_cake);
                             break;
                         case 3:
-                            String strName_drink = jsonObject.getString("NameDrink");
-                            String strDetail_drink = jsonObject.getString("DetailDrink");
-                            String strPicture_drink = jsonObject.getString("PictureDrink");
-                            addvalue = objDrinkTABLE.addNewDrink(strName_drink,strDetail_drink,strPicture_drink);
+                            String strName_drink = jsonObject.getString("Name_drink");
+                            String strDetail_drink = jsonObject.getString("Detail_drink");
+                            String strPicture_drink = jsonObject.getString("Picture_drink");
+                            objDrinkTABLE.addNewDrink(strName_drink,strDetail_drink,strPicture_drink);
                             break;
                         default:
                             String strprice = jsonObject.getString("Price");
                             String strNumber = jsonObject.getString("Number");
                             String strDate = jsonObject.getString("Date");
                             String strTotalPrice = jsonObject.getString("TotalPrice");
-                            addvalue = objOrderTABLE.addNewOrder(strprice,strNumber,strDate,strTotalPrice);
+                            objOrderTABLE.addNewOrder(strprice,strNumber,strDate,strTotalPrice);
                             break;
                     }
                 }

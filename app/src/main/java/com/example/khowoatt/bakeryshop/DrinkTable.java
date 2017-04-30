@@ -13,7 +13,7 @@ public class DrinkTable {
     private SQLiteDatabase writeSqLiteDatabase;
     private SQLiteDatabase readSqLiteDatabase;
 
-    public static final String DRINK_TABLE = "drinkTable";
+    public static final String DRINK_TABLE = "drinkTABLE";
     public static final String COLUMN_ID_DRINK = "ID_drink";
     public static final String COLUMN_DRINK = "Name_drink";
     public static final String COLUMN_SOURCE = "Detail_drink";
@@ -29,6 +29,6 @@ public class DrinkTable {
         objContentValues.put(COLUMN_DRINK,strName_drink);
         objContentValues.put(COLUMN_SOURCE,strDetail_drink);
         objContentValues.put(COLUMN_PRICE,strPicture_drink);
-        return writeSqLiteDatabase.insert(DRINK_TABLE,null, objContentValues);
+        return readSqLiteDatabase.insert(DRINK_TABLE,null, objContentValues);
     }
 }

@@ -6,8 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg3"
     tools:context="com.example.khowoatt.bakeryshop.Login">
-    tools:layout_editor_absoluteX="0dp"
-    tools:layout_editor_absoluteY="25dp">
+
 
 
     <Button
