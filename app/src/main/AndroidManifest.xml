@@ -26,6 +26,7 @@
         <activity android:name=".CakeMenu" />
         <activity android:name=".BreadMenu" />
         <activity android:name=".DrinkMenu" />
+        <activity android:name=".Detail"></activity>
     </application>
 
 </manifest>

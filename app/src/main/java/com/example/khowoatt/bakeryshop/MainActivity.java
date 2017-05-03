@@ -53,11 +53,11 @@ public class MainActivity extends AppCompatActivity {
         {
             InputStream objInputStream = null;
             String strJSON = null;
-            String strUserURL = "http://bitmouse.96.lt/K/user.php";
-            String strBakeryURL = "http://bitmouse.96.lt/K/bakery.php";
-            String strCakeURL = "http://bitmouse.96.lt/K/cake.php";
-            String strDrinkURL = "http://bitmouse.96.lt/K/drink.php";
-            String strOrderURL = "http://bitmouse.96.lt/K/order.php";
+            String strUserURL = "http://5711020660008.sci.dusit.ac.th/user.php";
+            String strBakeryURL = "http://5711020660008.sci.dusit.ac.th/bakery.php";
+            String strCakeURL = "http://5711020660008.sci.dusit.ac.th/cake.php";
+            String strDrinkURL = "http://5711020660008.sci.dusit.ac.th/drink.php";
+            String strOrderURL = "http://5711020660008.sci.dusit.ac.th/order.php";
             HttpPost objHttpPost = null;
 
             try {
@@ -108,38 +108,39 @@ public class MainActivity extends AppCompatActivity {
                         case 0:
                             String strUsername = jsonObject.getString("Username");
                             String strPassword = jsonObject.getString("Password");
-                            String strFacebook = jsonObject.getString("Facebook");
                             String strPhone = jsonObject.getString("Phone");
-                            String strAddress = jsonObject.getString("Address");
                             String strEmail = jsonObject.getString("Email");
-                            objUserTABLE.addNewUser(strUsername,strPassword,strFacebook,strPhone,strAddress,strEmail);
+                            objUserTABLE.addNewUser(strUsername,strPassword,strPhone,strEmail);
 
                             break;
                         case 1:
                             String strName_bakery = jsonObject.getString("Name_bakery");
                             String strDetail_bakery = jsonObject.getString("Detail_bakery");
                             String strPicture_bakery = jsonObject.getString("Picture_bakery");
-                            objBakeryTABLE.addNewBakery(strName_bakery,strDetail_bakery,strPicture_bakery);
+                            String strPrice_bakery = jsonObject.getString("Price_bakery");
+                            objBakeryTABLE.addNewBakery(strName_bakery,strDetail_bakery,strPicture_bakery,strPrice_bakery);
 
                             break;
                         case 2:
                             String strName_cake = jsonObject.getString("Name_cake");
                             String strDetail_cake = jsonObject.getString("Detail_cake");
                             String strPicture_cake = jsonObject.getString("Picture_cake");
-                            objCakeTABLE.addNewCake(strName_cake,strDetail_cake,strPicture_cake);
+                            String strPrice_cake = jsonObject.getString("Price_cake");
+                            objCakeTABLE.addNewCake(strName_cake,strDetail_cake,strPicture_cake,strPrice_cake);
                             break;
                         case 3:
                             String strName_drink = jsonObject.getString("Name_drink");
                             String strDetail_drink = jsonObject.getString("Detail_drink");
                             String strPicture_drink = jsonObject.getString("Picture_drink");
-                            objDrinkTABLE.addNewDrink(strName_drink,strDetail_drink,strPicture_drink);
+                            String strPrice_drink = jsonObject.getString("Price_drink");
+                            objDrinkTABLE.addNewDrink(strName_drink,strDetail_drink,strPicture_drink, strPrice_drink);
                             break;
                         default:
-                            String strprice = jsonObject.getString("Price");
+
                             String strNumber = jsonObject.getString("Number");
                             String strDate = jsonObject.getString("Date");
                             String strTotalPrice = jsonObject.getString("TotalPrice");
-                            objOrderTABLE.addNewOrder(strprice,strNumber,strDate,strTotalPrice);
+                            objOrderTABLE.addNewOrder(strNumber,strDate,strTotalPrice);
                             break;
                     }
                 }
@@ -167,13 +168,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }//ลิ้งกลับหน้า login
 
-    public void testAddValue(){
+    /*public void testAddValue(){
         objUserTABLE.addNewUser("testUser","testPass","testName","testEmail","testPhone","testAddress");
         objBakeryTABLE.addNewBakery("testBakery","testSource","testPrice");
         objOrderTABLE.addNewOrder("testOfficer","testBakery","testDate","testTotalPrice");
         objDrinkTABLE.addNewDrink("testDrink","testSource","testPrice");
         objCakeTABLE.addNewCake("testCake","testSource","testPrice");
-    }
+    }*/
 
     private void connectedSQLite(){
         objUserTABLE = new UserTable(this);

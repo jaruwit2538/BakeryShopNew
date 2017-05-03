@@ -81,7 +81,7 @@
             android:onClick="onClickBread"
             app:layout_constraintBottom_toTopOf="@+id/imvDrinks"
             app:layout_constraintTop_toBottomOf="@+id/imvCake"
-            app:srcCompat="@drawable/cookie"
+            app:srcCompat="@drawable/drinks"
             tools:layout_editor_absoluteX="0dp" />
 
         <ImageView
@@ -94,7 +94,7 @@
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imvCookie"
-            app:srcCompat="@drawable/drinks" />
+            app:srcCompat="@drawable/cookie" />
 
     </android.support.constraint.ConstraintLayout>
 </android.support.design.widget.CoordinatorLayout>

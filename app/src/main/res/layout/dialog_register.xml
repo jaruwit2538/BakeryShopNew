@@ -49,18 +49,6 @@
         android:textColorLink="@android:color/holo_orange_dark" />
 
     <EditText
-        android:id="@+id/addreass"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginTop="4dp"
-        android:hint="Address"
-        android:inputType="textPostalAddress"
-        android:textColorLink="@android:color/holo_orange_dark" />
-
-    <EditText
         android:id="@+id/email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -70,18 +58,6 @@
         android:layout_marginTop="4dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:textColorLink="@android:color/holo_orange_dark" />
-
-    <EditText
-        android:id="@+id/facebook"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginRight="4dp"
-        android:layout_marginTop="4dp"
-        android:hint="Facebook"
-        android:inputType="none"
         android:textColorLink="@android:color/holo_orange_dark" />
 
 

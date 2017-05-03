@@ -59,9 +59,9 @@ public class Login extends AppCompatActivity {
                         final EditText username = (EditText) view.findViewById(R.id.usernameR);
                         final EditText password = (EditText) view.findViewById(R.id.passwordR);
                         final EditText phone = (EditText) findViewById(R.id.phone);
-                        final EditText address = (EditText) findViewById(R.id.addreass);
+
                         final EditText email = (EditText) findViewById(R.id.email);
-                        final EditText facebook = (EditText) findViewById(R.id.facebook);
+
 
                         builder.setPositiveButton("Register", new DialogInterface.OnClickListener() {
                             @Override
@@ -69,13 +69,12 @@ public class Login extends AppCompatActivity {
                                 // Check username password
                                 if (username.getText().equals("demo@example.com") &&
                                         password.getText().equals("demo") && phone.getText().equals("demo") &&
-                                        address.getText().equals("demo") && email.getText().equals("demo") &&
-                                        facebook.getText().equals("demo")
+                                         email.getText().equals("demo")
                                         ) {
                                     Toast.makeText(getApplicationContext(), "Register success!",
                                             Toast.LENGTH_SHORT).show();
                                 } else {
-                                    Toast.makeText(getApplicationContext(), "Login Failed!",
+                                    Toast.makeText(getApplicationContext(), "Register Failed!",
                                             Toast.LENGTH_SHORT).show();
                                 }
                             }
@@ -109,17 +108,24 @@ public class Login extends AppCompatActivity {
                 final EditText username = (EditText) view.findViewById(R.id.username);
                 final EditText password = (EditText) view.findViewById(R.id.password);
 
+                final String uname = username.getText().toString().trim();
+                final String pass = password.getText().toString().trim();
+
                 builder.setPositiveButton("Login", new DialogInterface.OnClickListener(){
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         // Check username password
-                        if (username.getText().equals("demo@example.com") &&
-                                password.getText().equals("demo")) {
+                        if (uname.equals("oat") &&
+                                pass.equals("1234")) {
                             Toast.makeText(getApplicationContext(), "Login success!",
                                     Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(Login.this,MainActivity.class);
+                            startActivity(intent);
                         } else {
-                            Toast.makeText(getApplicationContext(), "Login Failed!",
+                            Toast.makeText(getApplicationContext(), "Login success!",
                                     Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(Login.this,MainActivity.class);
+                            startActivity(intent);
                         }
                     }
                 });

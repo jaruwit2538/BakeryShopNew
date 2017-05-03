@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="title">
+        <item>เอสเปรสโซ่</item>
+        <item>คาปูชิโน่</item>
+        <item>ชาดำเย็น</item>
+        <item>มัลคิอาโต้</item>
+
+        <item>ชาเขียว</item>
+        <item>น้ำมะม่วง</item>
+        <item>น้ำสตรอเบอรี่</item>
+    </string-array>
+
+    <string-array name="detail">
+        <item>50 บาท</item>
+        <item>45 บาท</item>
+        <item>60 บาท</item>
+        <item>40 บาท</item>
+        <item>45 บาท</item>
+        <item>45 บาท</item>
+        <item>50 บาท</item>
+    </string-array>
+</resources>
